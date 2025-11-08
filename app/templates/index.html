@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FakeGuard AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🧠 FakeGuard AI</h1>
+        <p>Detect and explain fake news using Machine Learning + Generative AI.</p>
+        <form method="POST">
+            <textarea name="news_text" placeholder="Paste a news article here..." required></textarea><br>
+            <button type="submit">Analyze</button>
+        </form>
+        {% if result %}
+        <div class="output">
+            <h3>{{ result }}</h3>
+            <p><strong>LLM Explanation:</strong> {{ explanation }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
